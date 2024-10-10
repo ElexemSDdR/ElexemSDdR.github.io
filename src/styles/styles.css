@@ -94,12 +94,12 @@ main {
 	.about-us {
 		background-color: var(--transparent-bg);
 		display: grid;
-		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 30% 45%;
 		place-items: center;
 		overflow: hidden;
 		height: 60dvh;
 		width: 100%;
+		padding-inline: 18%;
 		align-self: center;
 		backdrop-filter: blur(var(--backdrop-blur));
 		color: #fff;
@@ -119,16 +119,6 @@ main {
 			/* border-right: 1px solid #cfcfcf;
             border-left: 1px solid #cfcfcf;
 						*/
-		}
-
-		.photo {
-			text-align: center;
-
-			img {
-				width: 20rem;
-				height: 20rem;
-				border-radius: 9999px;
-			}
 		}
 	}
 
@@ -301,6 +291,12 @@ footer{
 	width: 100%;
 	background-color: #000;
 	backdrop-filter: blur(var(--backdrop-blur));
+	font-size: .8rem;
+
+	p, a{
+		align-self: flex-end;
+		padding-bottom: 5px;
+	}
 
 	a{
 		text-decoration: none;
