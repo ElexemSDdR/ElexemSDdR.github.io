@@ -20,7 +20,7 @@ html{
 
 body {
 	display: grid;
-	grid-template-rows: auto 5% 1fr auto;
+	grid-template-rows: auto 5% 1fr 10%;
 	min-height: 100dvh;
 	justify-content: center;
 	background: url('../img/fondo-sushi.jpeg') no-repeat center center fixed;
