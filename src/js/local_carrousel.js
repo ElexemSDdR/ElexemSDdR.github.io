@@ -1,47 +1,36 @@
 const localPhotos = [
     {
-        src: '../img/local-carrousel/cartel_tamashi.jpeg',
-        id: 0
+        src: '../img/local-carrousel/cartel_tamashi.jpeg'
     },
     {
-        src: '../img/local-carrousel/outside_1.jpeg',
-        id: 1
+        src: '../img/local-carrousel/outside_1.jpeg'
     },
     {
-        src: '../img/local-carrousel/kitty.jpeg',
-        id: 2
+        src: '../img/local-carrousel/kitty.jpeg'
     },
     {
-        src: '../img/local-carrousel/inside_2.jpeg',
-        id: 3
+        src: '../img/local-carrousel/inside_2.jpeg'
     },
     {
-        src: '../img/local-carrousel/soups.jpeg',
-        id: 4
+        src: '../img/local-carrousel/soups.jpeg'
     },
     {
-        src: '../img/local-carrousel/kitchen_1.jpeg',
-        id: 5
+        src: '../img/local-carrousel/kitchen_1.jpeg'
     },
     {
-        src: '../img/local-carrousel/kitchen_2.jpeg',
-        id: 6
+        src: '../img/local-carrousel/kitchen_2.jpeg'
     },
     {
-        src: '../img/local-carrousel/kitchen_3.jpeg',
-        id: 7
+        src: '../img/local-carrousel/kitchen_3.jpeg'
     },
     {
-        src: '../img/local-carrousel/kitchen_4.jpeg',
-        id: 8
+        src: '../img/local-carrousel/kitchen_4.jpeg'
     },
     {
-        src: '../img/local-carrousel/kitchen_5.jpeg',
-        id: 9
+        src: '../img/local-carrousel/kitchen_5.jpeg'
     },
     {
-        src: '../img/local-carrousel/sushi-prepared.jpeg',
-        id: 10
+        src: '../img/local-carrousel/sushi-prepared.jpeg'
     }
 ]
 

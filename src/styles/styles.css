@@ -12,7 +12,7 @@ html{
 
 :root {
 	color-scheme: light dark;
-	--red: #b62929;
+	--red: #9b2323;
 	--transparent-bg: rgba(59, 59, 59, 0.685);
 	--padding-articles: 15%;
 	--backdrop-blur: 10px;
@@ -20,15 +20,24 @@ html{
 
 body {
 	display: grid;
-	grid-template-rows: auto 5% 1fr auto;
+	grid-template-areas: 
+	'header' 'header' 'header',
+	'main' 'main' 'main',
+	'footer' 'footer' 'footer'
+	;
 	min-height: 100dvh;
 	justify-content: center;
 	background: url('../img/fondo-sushi.jpeg') no-repeat center center fixed;
 	background-size: cover;
 }
 
+.menuIcon, .sideBarMenu{
+	display: none;
+}
+
 header {
 	display: grid;
+	grid-area: 'header';
 	grid-template-columns: repeat(2, 1fr);
 	width: 100%;
 	height: 5.3rem;
@@ -37,6 +46,7 @@ header {
 	text-align: center;
 	background: #000;
 	overflow: hidden;
+
 
 	nav {
 		ul {
@@ -83,14 +93,16 @@ h1 {
 main {
 	display: grid;
 	height: 100dvh;
+	grid-area: 'main';
 	margin: 0 auto;
-	margin-bottom: 100%;
 	width: 100%;
+	height: 10%;
 	
 	h2{
 		font-size: 2.4rem;
 		text-align: center;
 	}
+
 	.about-us {
 		background-color: var(--transparent-bg);
 		display: grid;
@@ -283,11 +295,10 @@ main {
 }
 
 footer{
-	align-self: self-end;
+	grid-area: 'footer';
 	display: grid;
 	place-items: center;
 	height: 10dvh;
-	margin-top: 5%;
 	width: 100%;
 	background-color: #000;
 	backdrop-filter: blur(var(--backdrop-blur));
@@ -295,7 +306,7 @@ footer{
 
 	p, a{
 		align-self: flex-end;
-		padding-bottom: 5px;
+		padding-bottom: 10px;
 	}
 
 	a{
@@ -307,5 +318,239 @@ footer{
 			text-decoration: underline;
 			color: rgb(223, 78, 78);
 		}
+	}
+}
+
+@media screen and ( width <= 768px ) { 
+
+	body {
+		display: grid;
+		grid-template-areas: 
+		'header' 'header' 'header',
+		'aside' 'main' 'main',
+		'footer' 'footer' 'footer'
+		;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+
+	header {
+		width: 100%;
+		display: flex;
+		padding-inline: 18dvw;
+		justify-content: space-between;
+		
+		.menuIcon {
+			display: block;
+			border: none;
+			background-color:transparent;
+			width: fit-content;
+			height: fit-content;
+		}
+		
+		nav {
+			display: none;
+		}
+	}
+	
+	.sideBarMenu{
+		grid-area: 'aside';
+		height: 250%;
+		display: block;
+		position: absolute;
+		height: 100%;
+		left: -100%;
+		background-color: #000;
+		z-index: 1;
+		width: 50dvw;
+		transition: left .5s ease-in-out;
+
+		.closeSideBarMenu {
+			border: none;
+			background-color:transparent;
+			width: fit-content;
+			padding: 5%;
+		}
+
+		.tamashi-icon {
+			img {
+				width: 100%;
+			}
+		}
+
+		nav {
+			
+			ul {
+				display: flex;
+				flex-direction: column;
+				list-style: none;
+				gap: 3px;
+
+				li {
+					background-color: var(--red);
+					padding-inline: 15px;
+					padding-block: 8px;
+
+					.sections-links {
+						color: #fff;
+						text-decoration: none;
+						transition: color .1s ease-in-out;
+	
+						&:hover {
+							color: var(--red);
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.open {
+		left: 0;
+	}
+
+	main {
+		height: 10%;
+		margin-bottom: 0;
+
+		.about-us {
+			padding: 0;
+			height: 18rem;
+
+			h2 {
+				margin-block: 3rem; 
+			}
+
+			.info {
+				text-align: left;
+				margin-inline: 4.8rem;
+				padding-inline: 1rem;
+				padding-block: 1rem;
+			}
+		}
+
+		.our-experience{
+			width: 100%;
+			height: fit-content;
+			margin-block: 20%;
+			padding-inline: 0;
+
+			h2{
+				margin-block: 1rem 4rem;
+			}
+
+			.tour{
+				text-align: left;
+				text-wrap: pretty;
+				display: flex;
+				flex-direction: column;
+				row-gap: 1rem;
+			}
+			.about-local{
+				display: block;
+				text-align: left;
+				margin-block: 5%;
+				padding-block: 40px;
+				
+				.about-the-local-info{
+					margin: 0;
+					display: flex;
+					flex-direction: column;
+					row-gap: 25px;
+					margin-bottom: 15%;
+					padding-inline: 0;
+
+				}
+				.slider-content{
+					position: relative;
+					
+					.slider{
+						overflow: hidden;
+						white-space: nowrap;
+						border-radius: 30px;
+
+						img{
+							aspect-ratio: 16/9;
+							margin-left: 2px;
+							object-fit: cover;
+							height: 23rem;
+							width: 100%;
+							cursor: pointer;
+						}
+					}
+
+					#prev-btn{
+						left: -63px;
+						top: 0;
+						bottom: 0;
+					}
+
+					#next-btn{
+						rotate: 180deg;
+						right: -63px;
+						top: 0;
+						bottom: 0;
+					}
+				}
+			}
+			.eating-sushi{
+				display: flex;
+				flex-direction: column-reverse;
+				justify-content: center;
+				align-content: center;
+				padding-bottom: 50px;
+				gap: 2rem;
+		
+				.trying-sushi{
+					display: flex;
+					flex-direction: column;
+					row-gap: 1rem;
+					margin-inline: 5%;
+				}
+		
+				.slider-content-eating-sushi{
+					position: relative;
+					
+					.slider-eating-sushi{
+						margin: auto;
+						overflow: hidden;
+						white-space: nowrap;
+						border-radius: 30px;
+
+						img{
+							aspect-ratio: 16/9;
+							margin-left: 2px;
+							object-fit: cover;
+							height: 23rem;
+							width: 100%;
+							cursor: pointer;
+						}
+					}
+
+					#before-btn{
+						left: 30px;
+						top: 0;
+						bottom: 0;
+					}
+		
+					#after-btn{
+						rotate: 180deg;
+						right: 34px;
+						top: 0;
+						bottom: 0;
+					}
+				}
+			}
+		}
+	}
+
+	footer {
+		grid-area: 'footer';
+		width: 100%;
+		background-color: #000;
+		font-size: .8rem;
 	}
 }
